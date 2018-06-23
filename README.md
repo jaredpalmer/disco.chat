@@ -6,7 +6,6 @@
 <p align="center">Add anonymous ephemeral real-time chat to any webpage.</p>
 
 <br>
-<br>
 
 
 ## Overview
