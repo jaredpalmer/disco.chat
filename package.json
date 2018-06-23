@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "NODE_ENV=production tsc",
     "build": "tsc && node ./build/server.js",
-    "start": "./node_modules/nodemon/bin/nodemon.js -e .ts  --exec \"npm run build\"",
+    "start": "NODE_ENV=development ./node_modules/nodemon/bin/nodemon.js -e .ts  --exec \"npm run build\"",
     "start:prod": "NODE_ENV=production node ./build/server.js"
   },
   "dependencies": {
