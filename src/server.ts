@@ -54,19 +54,22 @@ function createServer(): any {
 
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
-  app.use(express.static('public'));
-  app.get('/about', (_req, res, next) => {
-    fs.readFile(
-      path.join(__dirname, '../public/about.html'),
-      'utf8',
-      (err, data) => {
-        if (err) {
-          next(err);
+  // Only serve the public directory during dev
+  if (process.env.NODE_ENV === 'development') {
+    app.use(express.static('public'));
+    app.get('/about', (_req, res, next) => {
+      fs.readFile(
+        path.join(__dirname, '../public/about.html'),
+        'utf8',
+        (err, data) => {
+          if (err) {
+            next(err);
+          }
+          res.send(data);
         }
-        res.send(data);
-      }
-    );
-  });
+      );
+    });
+  }
 
   app.all('*', function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
