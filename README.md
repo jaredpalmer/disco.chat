@@ -1,8 +1,12 @@
 > NOT FOR PRODUCTION. NOT MAINTAINED. DO NOT USE. SEE [POST MORTEM](#post-mortem)
 
-# disco.chat
 
-Add anonymous ephemeral real-time chat to any webpage.
+![repo-banner](https://user-images.githubusercontent.com/4060187/41813448-78fad916-7704-11e8-958a-4f57a83a747c.png)
+
+<p align="center">Add anonymous ephemeral real-time chat to any webpage.</p>
+
+<br>
+<br>
 
 ## The Problem
 
