@@ -1,0 +1,56 @@
+{
+  "name": "disco-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "NODE_ENV=production tsc",
+    "build": "tsc && node ./build/server.js",
+    "start": "./node_modules/nodemon/bin/nodemon.js -e .ts  --exec \"npm run build\"",
+    "start:prod": "NODE_ENV=production node ./build/server.js"
+  },
+  "dependencies": {
+    "@types/body-parser": "^1.16.5",
+    "@types/express": "^4.0.38",
+    "@types/helmet": "^0.0.36",
+    "@types/hpp": "^0.2.0",
+    "@types/lodash": "^4.14.77",
+    "@types/mongoose": "^4.7.23",
+    "@types/morgan": "^1.7.33",
+    "@types/node": "^8.0.34",
+    "@types/socket.io": "^1.4.31",
+    "@types/throng": "^4.0.1",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "docusaurus": "*",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.1",
+    "helmet": "^3.9.0",
+    "hpp": "^0.2.2",
+    "joi": "^13.0.1",
+    "lanes": "^1.1.0",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.12.1",
+    "monk": "^6.0.5",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.12.1",
+    "socket.io": "^2.0.3",
+    "socket.io-redis": "^5.2.0",
+    "throng": "^4.0.0",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.3"
+  },
+  "nodemon": {
+    "watch": [
+      "src/"
+    ],
+    "ignore": [
+      ".git",
+      "node_modules/**/node_modules"
+    ],
+    "ext": "ts js json"
+  },
+  "devDependencies": {
+    "@types/joi": "^10.4.4"
+  }
+}

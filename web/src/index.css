@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@media screen and (min-width: 360px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  overflow-y: scroll;
+}
+
+button,
+input {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+input {
+  -webkit-appearance: none;
+  font-size: 16px;
+}
+
+.scrolls {
+  -webkit-overflow-scrolling: touch;
+}
+.disco-text-input {
+  border-bottom: 1px solid #eee;
+}
+
+#chat a {
+  color: #16171a;
+  text-decoration: underline;
+}
+
+#chat .from-me a {
+  color: #fff;
+  text-decoration: underline;
+}
