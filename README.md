@@ -26,11 +26,11 @@ disco.chat adds anonymous ephemeral real-time chat to any webpage. It's a mashup
 **Chat anonymously and ephemerally with other readers.**
 - No user data is collected
 - Each URL is it's own chat room
-- Messages only live until you refresh the page
+- Messages only live until you refresh the page (note: in this experimental testing stage, I'm keeping them in mongodb for analysis, but the idea is to not actually store them if this went further).
 
 ## Post mortem
 
-Although, I did actually deploy this on [one article on my dad's blog](https://www.shellypalmer.com/2017/11/stop-meta-work-now/), **I stopped working on this side project.** A company called [Spot.im](https://spot.im) does pretty much the same thing. 
+Although I did actually deploy this on [one article on my dad's blog](https://www.shellypalmer.com/2017/11/stop-meta-work-now/), **I stopped working on this side project.** A company called [Spot.im](https://spot.im) does pretty much the same thing. 
 
 This was my first time writing 3rd-party JS, working with iframes, and websockets. There are some bits of code that I am particularly proud of which you may find useful:
 
