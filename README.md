@@ -12,6 +12,9 @@ Be gentle. Be nice.
 
 ---
 
+<img width="600px" src="https://user-images.githubusercontent.com/4060187/41812799-e9462304-76f7-11e8-957d-251403512978.png" alt="Disco.chat example">
+
+
 ## The Problem
 
 - Publishers are absolutely desparate for new ways to boost engagement/pageviews
@@ -43,5 +46,35 @@ disco.chat adds anonymous and ephemeral real-time chat to any webpage. It's a ma
 - Analytics?
 - Typing indicators would be nice.
 - Move to GraphQL?
+
+## Developing Locally
+
+### Structure
+
+The project's root is the API at the moment. It's source can be found in `./src`.
+
+In `./web`, you'll find the React x TypeScript chat application and in `web/sdk/disco.js`, you'll find the 3rd party JS. The rollup watch task (yarn `sdk`), will conveniently output the sdk js into the `./web/public` directory (this is the `public` directory of the create-react-app app), thus it is served up by `react-scripts-ts`'s webpack dev server at `localhost:3000/disco.dev.js` during development.
+
+### Installation
+
+```bash
+yarn install && cd web && yarn install && cd .. 
+```
+
+### Running the app(s)
+
+Open 3 terminal tabs....
+
+```bash
+yarn start # 1. start the API
+cd web
+yarn start # 2. start the application (chat UI)
+yarn sdk # 3. develop the sdk (./web/sdk/disco.js)
+```
+
+You can either develop the chat app at `localhost:3000`. However, you can get the full end-user experience by going to `localhost:5000` and `localhost:5000/about` during development. These serve the 2 HTML pages `./public/about.html` and `./public/index.html`. These are meant to mimic how the sdk is used by a 3rd-party site. Feel free to change them as you wish to simulate more real world usage. 
+ 
+
+
 
 
