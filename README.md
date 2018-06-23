@@ -4,22 +4,20 @@ Add anonymous ephemeral real-time chat to any webpage.
 
 > NOT FOR PRODUCTION. DO NOT USE. NOT MAINTAINED.
 
-## Overview
+## The Problem
 
-### The Problem
-
-- Publishers are absolutely desparate for new ways to boost engagement/pageviews
+- Publishers are absolutely desperate for new ways to boost engagement/pageviews
 - Reddit, Facebook, and Twitter have centralized the web (sadly), but discussions (i.e. comments) are still effectively asynchronous on their core web platforms 
 - Chat services like Discord have been able to grow communities (some around publisher content) via real-time chat
-- Publishers have limited ways to monetize these hand raisers and/or be part of the discussion
+- Publishers have limited ways to monetize these hand-raisers and/or be part of the discussion
 
-### The Solution
+## The Solution
 
-disco.chat adds anonymous and ephemeral real-time chat to any webpage. It's a mashup of Twitch.tv's chat and Intercom's customer service chat widget.
+disco.chat adds anonymous ephemeral real-time chat to any webpage. It's a mashup of Twitch.tv's chat and Intercom's customer service chat widget.
 
 <img width="600px" src="https://user-images.githubusercontent.com/4060187/41812799-e9462304-76f7-11e8-957d-251403512978.png" alt="Disco.chat example">
 
-#### The Rules
+### The Rules
 
 **Chat anonymously and ephemerally with other readers.**
 - No user data is collected
