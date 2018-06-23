@@ -1,8 +1,8 @@
+> NOT FOR PRODUCTION. DO NOT USE. NOT MAINTAINED. SEE POST MORTEM AT END OF README
+
 # disco.chat
 
 Add anonymous ephemeral real-time chat to any webpage.
-
-> NOT FOR PRODUCTION. DO NOT USE. NOT MAINTAINED.
 
 ## The Problem
 
