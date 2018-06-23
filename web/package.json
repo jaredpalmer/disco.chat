@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts-ts start",
-    "dev": "NODE_ENV=development rollup -c -w",
+    "sdk": "NODE_ENV=development rollup -c -w",
     "build-widget": "NODE_ENV=production rollup -c",
     "build-app": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
