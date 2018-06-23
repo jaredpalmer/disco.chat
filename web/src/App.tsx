@@ -46,19 +46,23 @@ class App extends React.Component<{}, AppState> {
     numUsers: 0,
     numViewers: 0,
     users: {},
-    messages: [
-      {
-        username: 'jared',
-        content:
-          ' hello https://github.com/tasti/react-linkify/blob/master/src/Linkify.jsx',
-      },
+    messages:
+      process.env.NODE_ENV === 'development'
+        ? [
+            // seed some stuff when developing.
+            {
+              username: 'jared',
+              content:
+                ' hello https://github.com/tasti/react-linkify/blob/master/src/Linkify.jsx',
+            },
 
-      {
-        username: 'jared',
-        content:
-          ' hello https://github.com/tasti/react-linkify/blob/master/src/Linkify.jsx',
-      },
-    ],
+            {
+              username: 'jared',
+              content:
+                ' hello https://github.com/tasti/react-linkify/blob/master/src/Linkify.jsx',
+            },
+          ]
+        : [],
   };
 
   componentDidMount() {
