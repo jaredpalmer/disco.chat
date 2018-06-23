@@ -1,19 +1,22 @@
 # disco.chat
 
-disco.chat adds anonymous and ephemeral real-time chat to any webpage. It's a mashup of Twitch.tv's chat and Intercom's customer service chat widget.
-
-**I gave up on this side project, but feel free to poke around, do whatever you want.** 
-
-A company called [Spot.im](https://spot.im) does a similiar thing (I think).
-
-You can view a demo here: https://www.shellypalmer.com/2017/11/stop-meta-work-now/.
-
-Be gentle. Be nice.
-
----
+Add anonymous ephemeral real-time chat to any webpage.
 
 <img width="600px" src="https://user-images.githubusercontent.com/4060187/41812799-e9462304-76f7-11e8-957d-251403512978.png" alt="Disco.chat example">
 
+
+### WARNING: Not for production.
+
+**I stopped working on this side project,** but feel free to poke around. This was my first time writing 3rd-party JS, working with iframes, and websockets. There are some bits of code that I am particularly proud of which you may find useful:
+
+- [`web/sdk/disco.js#L26-L61`](https://github.com/jaredpalmer/disco.chat/blob/master/web/sdk/disco.js#L26-L61) Coordinated state changes across the app and the widget (separate react and preact apps)
+- [`web/src/App.tsx#L317-L331`](https://github.com/jaredpalmer/disco.chat/blob/master/web/src/App.tsx#L317-L331) Twitter Lite's empty div + flexbox technique for chat layout
+
+A company called [Spot.im](https://spot.im) does a similiar thing (I think). 
+
+I did actually deploy this to one page my dad's blog. You can view a demo here: https://www.shellypalmer.com/2017/11/stop-meta-work-now/. Be gentle. Be nice.
+
+---
 
 ## The Problem
 
