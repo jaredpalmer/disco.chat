@@ -7,6 +7,7 @@
     "emotion": "^8.0.10",
     "emotion-jsxstyle": "^1.1.0",
     "formik": "^0.10.4",
+    "preact": "^8.2.9",
     "prop-types": "^15.6.0",
     "qs": "^6.5.1",
     "raf": "^3.4.0",

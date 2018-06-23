@@ -28,9 +28,10 @@ export interface AppState {
 
 const Origins = [
   process.env.NODE_ENV === 'development' && '',
-  'http://localhost:5001',
+  process.env.NODE_ENV === 'development' && 'http://localhost:5000',
   'https://www.shellypalmer.com',
   'https://disco.chat',
+  'https://talk.disco.chat',
   'https://api.disco.chat',
 ].filter(Boolean);
 

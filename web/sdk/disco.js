@@ -259,7 +259,7 @@ class Disco {
     this.isOpen = false;
     this.src =
       process.env.NODE_ENV === 'production'
-        ? process.env.PUBLIC_URL
+        ? 'https://talk.disco.chat'
         : 'http://localhost:3000';
   }
 
