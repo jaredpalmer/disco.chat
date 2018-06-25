@@ -6,7 +6,7 @@
     "classnames": "^2.2.5",
     "emotion": "^8.0.10",
     "emotion-jsxstyle": "^1.1.0",
-    "formik": "^0.10.4",
+    "formik": "^1.0.0-beta.2",
     "preact": "^8.2.9",
     "prop-types": "^15.6.0",
     "qs": "^6.5.1",
@@ -68,6 +68,6 @@
     "rollup-plugin-uglify": "^2.0.1",
     "tslint": "^5.8.0",
     "tslint-react": "^3.2.0",
-    "typescript": "2.5.3"
+    "typescript": "2.8.3"
   }
 }
