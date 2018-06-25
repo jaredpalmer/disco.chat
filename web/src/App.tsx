@@ -65,6 +65,7 @@ class App extends React.Component<{}, AppState> {
   };
 
   componentDidMount() {
+    console.log('mount');
     window.addEventListener('message', this.receiver, false);
 
     socket.on('WARN', ({ text }: any) => {
@@ -155,6 +156,7 @@ class App extends React.Component<{}, AppState> {
   }
 
   receiver = (e: MessageEvent) => {
+    console.log(e);
     if (
       process.env.NODE_ENV !== 'development' &&
       Origins.filter(o => o === e.origin).length === 0
@@ -251,6 +253,7 @@ class App extends React.Component<{}, AppState> {
     if (!this.state.connected) {
       return 'connecting...';
     }
+    console.log('appstate', this.state);
     return (
       <Col
         props={{ id: 'chat' }}
