@@ -2,14 +2,11 @@ import * as React from 'react';
 import * as io from 'socket.io-client';
 import { Formik, Form, FormikActions } from 'formik';
 import { Col, Row, Block } from 'emotion-jsxstyle';
-// import * as qs from 'qs';
 let socket = io.connect(process.env.REACT_APP_API_URL as string);
 import Textarea from 'react-textarea-autosize';
 import { Theme } from './Theme';
-import { Instructions } from './components/Instructions';
 import Linkify from 'react-linkify';
 
-// const Formish = Formik as any;
 export interface AppState {
   connected: boolean;
   forbidden: boolean;
@@ -65,6 +62,7 @@ class App extends React.Component<{}, AppState> {
   };
 
   componentDidMount() {
+    console.log('mount');
     window.addEventListener('message', this.receiver, false);
 
     socket.on('WARN', ({ text }: any) => {
@@ -155,6 +153,7 @@ class App extends React.Component<{}, AppState> {
   }
 
   receiver = (e: MessageEvent) => {
+    console.log(e);
     if (
       process.env.NODE_ENV !== 'development' &&
       Origins.filter(o => o === e.origin).length === 0
@@ -243,7 +242,7 @@ class App extends React.Component<{}, AppState> {
     }
   };
 
-  render() {
+  render(): JSX.Element | null | string {
     if (this.state.forbidden) {
       return 'not allowed hssere';
     }
@@ -251,6 +250,7 @@ class App extends React.Component<{}, AppState> {
     if (!this.state.connected) {
       return 'connecting...';
     }
+    console.log('appstate', this.state);
     return (
       <Col
         props={{ id: 'chat' }}
@@ -302,7 +302,6 @@ class App extends React.Component<{}, AppState> {
               xmlns="http://www.w3.org/2000/svg"
               x="0px"
               y="0px"
-              style={{ verticalAlign: 'middle' }}
               viewBox="0 0 24 24"
               width="24"
               height="24"
@@ -330,7 +329,21 @@ class App extends React.Component<{}, AppState> {
           props={{ ref: (e: any) => (this.container = e) }}
         >
           <div />
-          <Instructions />
+          <Block
+            margin="0 auto"
+            padding="1rem .5rem"
+            fontSize="1rem"
+            color="#828c99"
+          >
+            <strong>
+              Chat anonymously and ephemerally with other readers.
+            </strong>
+            <ul>
+              <li>No user data is collected</li>
+              <li>Each URL is it's own chat room</li>
+              <li>Messages only live until you refresh the page</li>
+            </ul>
+          </Block>
           {this.state.messages.map((m, i) => (
             <Block
               key={`message-${i}`}
@@ -542,7 +555,6 @@ class App extends React.Component<{}, AppState> {
                       clipRule="evenodd"
                       strokeLinejoin="round"
                       strokeMiterlimit="1.414"
-                      xmlns="http://www.w3.org/2000/svg"
                       aria-labelledby="title"
                       viewBox="0 0 32 32"
                       preserveAspectRatio="xMidYMid meet"

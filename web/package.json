@@ -30,6 +30,10 @@
     "predeploy": "npm run build-app && npm run build-widget && npm run coverage",
     "deploy": "aws s3 sync build/ s3://talk.disco.chat  --profile disco-local --cache-control max-age=172800 --delete && aws configure set preview.cloudfront true  --profile disco-local && aws cloudfront create-invalidation --distribution-id E1QGPDYNPJPZY6 --paths /disco.js /index.html  --profile disco-local"
   },
+  "resolutions": {
+    "@types/react": "16.3.14",
+    "@types/react-dom": "16.0.5"
+  },
   "devDependencies": {
     "@types/enzyme": "^3.1.0",
     "@types/enzyme-adapter-react-16": "^1.0.0",
@@ -37,8 +41,8 @@
     "@types/node": "^8.0.53",
     "@types/prop-types": "^15.5.2",
     "@types/qs": "^6.5.0",
-    "@types/react": "^16.0.25",
-    "@types/react-dom": "^16.0.1",
+    "@types/react": "^16.3.14",
+    "@types/react-dom": "^16.0.5",
     "@types/react-textarea-autosize": "^4.3.1",
     "@types/socket.io-client": "^1.4.31",
     "@types/webpack-env": "^1.13.2",
@@ -57,7 +61,7 @@
     "babel-preset-stage-1": "^6.24.1",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.2",
-    "react-scripts-ts": "^2.8.0",
+    "react-scripts-ts": "^2.16.0",
     "react-test-renderer": "16",
     "rollup": "^0.50.0",
     "rollup-plugin-babel": "^3.0.2",
@@ -66,8 +70,9 @@
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-replace": "^2.0.0",
     "rollup-plugin-uglify": "^2.0.1",
-    "tslint": "^5.8.0",
+    "ts-jest": "^22.4.6",
+    "tslint": "^5.10.0",
     "tslint-react": "^3.2.0",
-    "typescript": "2.8.3"
+    "typescript": "2.9.1"
   }
 }

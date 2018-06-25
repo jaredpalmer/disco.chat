@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
     "outDir": "build/dist",
-    "module": "esnext",
+    "module": "commonjs",
     "target": "es5",
-    "lib": ["es6", "dom"],
+    "lib": ["es6", "dom", "es2015", "es2017"],
     "sourceMap": true,
-    "allowJs": true,
+    "allowJs": false,
     "jsx": "react",
     "moduleResolution": "node",
     "rootDir": "src",
@@ -14,11 +14,13 @@
     "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "pretty": false,
-    "strict": true,
     "suppressImplicitAnyIndexErrors": true,
+    "baseUrl": ".",
+    "strict": true,
+    "pretty": true,
+    "allowSyntheticDefaultImports": true,
     "noUnusedLocals": true,
-    "typeRoots": ["typings"]
+    "skipLibCheck": true // see https://github.com/cypress-io/cypress/issues/1087
   },
   "exclude": [
     "node_modules",
@@ -29,6 +31,5 @@
     "jest",
     "src/setupTests.ts",
     "src/**/*.test.tsx"
-  ],
-  "types": ["node", "webpack-env"]
+  ]
 }
