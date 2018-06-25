@@ -38,7 +38,6 @@ const Origins = [
 class App extends React.Component<{}, AppState> {
   container: any;
   room: any;
-  username: HTMLInputElement | null;
 
   state: AppState = {
     forbidden: false,
@@ -161,13 +160,17 @@ class App extends React.Component<{}, AppState> {
       Origins.filter(o => o === e.origin).length === 0
     ) {
       this.setState({ forbidden: true });
-      e.source.postMessage(
-        { code: -1, message: 'invalid configuration' },
-        e.origin
-      );
+      if (e && e !== null && e.source) {
+        e.source.postMessage(
+          { code: -1, message: 'invalid configuration' },
+          e.origin
+        );
+      }
     } else {
       this.setState({ room: e.data.room, origin: e.origin, source: e.source });
-      e.source.postMessage({ code: 1, message: 'connected' }, e.origin);
+      if (e && e !== null && e.source) {
+        e.source.postMessage({ code: 1, message: 'connected' }, e.origin);
+      }
       socket.emit('add viewer', { room: e.data.room });
       if (e.data.username) {
         socket.emit('add user', {
@@ -304,12 +307,10 @@ class App extends React.Component<{}, AppState> {
               width="24"
               height="24"
             >
-              <g className="nc-icon-wrapper" fill="#eee" aria-hidden="true">
-                <path
-                  fill="#eee"
-                  d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"
-                />
-              </g>
+              <path
+                fill="#eee"
+                d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"
+              />
             </svg>
           </Block>
         </Row>
