@@ -2,286 +2,273 @@
 import { h, Component, render } from 'preact';
 
 const css = `
-#disco-container a,
-#disco-container abbr,
-#disco-container acronym,
-#disco-container address,
-#disco-container applet,
-#disco-container article,
-#disco-container aside,
-#disco-container audio,
-#disco-container b,
-#disco-container big,
-#disco-container blockquote,
-#disco-container button,
-#disco-container canvas,
-#disco-container caption,
-#disco-container center,
-#disco-container cite,
-#disco-container code,
-#disco-container dd,
-#disco-container del,
-#disco-container details,
-#disco-container dfn,
+#disco-container,
 #disco-container div,
-#disco-container div.form,
-#disco-container dl,
-#disco-container dt,
-#disco-container em,
-#disco-container fieldset,
-#disco-container figcaption,
-#disco-container figure,
-#disco-container footer,
-#disco-container form,
-#disco-container h1,
-#disco-container h2,
-#disco-container h3,
-#disco-container h4,
-#disco-container h5,
-#disco-container h6,
-#disco-container header,
-#disco-container hgroup,
-#disco-container i,
-#disco-container iframe,
-#disco-container img,
-#disco-container input,
-#disco-container input[type],
-#disco-container ins,
-#disco-container kbd,
-#disco-container label,
-#disco-container legend,
-#disco-container li,
-#disco-container mark,
-#disco-container menu,
-#disco-container nav,
-#disco-container object,
-#disco-container ol,
-#disco-container p,
-#disco-container pre,
-#disco-container q,
-#disco-container s,
-#disco-container samp,
-#disco-container section,
-#disco-container small,
-#disco-container span,
-#disco-container strike,
-#disco-container strong,
-#disco-container sub,
-#disco-container summary,
-#disco-container sup,
-#disco-container table,
-#disco-container tbody,
-#disco-container td,
-#disco-container textarea,
-#disco-container tfoot,
-#disco-container th,
-#disco-container thead,
-#disco-container time,
-#disco-container tr,
-#disco-container tt,
-#disco-container u,
-#disco-container ul,
-#disco-container var,
-#disco-container video {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size-adjust: none;
-  font-size: 100%;
-  font-style: normal;
-  letter-spacing: normal;
-  font-stretch: normal;
-  font-variant: normal;
-  font-weight: 400;
-  font: normal normal 100% -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  text-align: left;
-  text-align-last: auto;
-  text-decoration: none;
-  -webkit-text-emphasis: none;
-  text-emphasis: none;
-  text-height: auto;
-  text-indent: 0;
-  text-justify: auto;
-  text-outline: none;
-  text-shadow: none;
-  text-transform: none;
-  text-wrap: normal;
-  alignment-adjust: auto;
-  alignment-baseline: baseline;
-  -webkit-animation: none 0 ease 0 1 normal;
-  animation: none 0 ease 0 1 normal;
-  -webkit-animation-play-state: running;
-  animation-play-state: running;
-  -webkit-appearance: normal;
-  -moz-appearance: normal;
-  appearance: normal;
-  azimuth: center;
-  -webkit-backface-visibility: visible;
-  backface-visibility: visible;
-  background: none 0 0 auto repeat scroll padding-box transparent;
-  background-color: transparent;
-  background-image: none;
-  baseline-shift: baseline;
-  binding: none;
-  bleed: 6pt;
-  bookmark-label: content();
-  bookmark-level: none;
-  bookmark-state: open;
-  bookmark-target: none;
-  border: 0 none transparent;
-  border-radius: 0;
-  bottom: auto;
-  box-align: stretch;
-  -webkit-box-decoration-break: slice;
-  box-decoration-break: slice;
-  box-direction: normal;
-  box-flex: 0.0;
-  box-flex-group: 1;
-  box-lines: single;
-  box-ordinal-group: 1;
-  box-orient: inline-axis;
-  box-pack: start;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
-  -webkit-column-break-after: auto;
-  break-after: auto;
-  -webkit-column-break-before: auto;
-  break-before: auto;
-  -webkit-column-break-inside: auto;
-  break-inside: auto;
-  caption-side: top;
-  clear: none;
-  clip: auto;
-  color: inherit;
-  color-profile: auto;
-  -webkit-column-count: auto;
-  column-count: auto;
-  -webkit-column-fill: balance;
-  column-fill: balance;
-  -webkit-column-gap: normal;
-  column-gap: normal;
-  -webkit-column-rule: medium medium #1f1f1f;
-  column-rule: medium medium #1f1f1f;
-  -webkit-column-span: 1;
-  column-span: 1;
-  -webkit-column-width: auto;
-  column-width: auto;
-  -webkit-columns: auto auto;
-  columns: auto auto;
-  content: normal;
-  counter-increment: none;
-  counter-reset: none;
-  crop: auto;
-  cursor: auto;
-  direction: ltr;
-  display: inline;
-  dominant-baseline: auto;
-  drop-initial-after-adjust: text-after-edge;
-  drop-initial-after-align: baseline;
-  drop-initial-before-adjust: text-before-edge;
-  drop-initial-before-align: caps-height;
-  drop-initial-size: auto;
-  drop-initial-value: initial;
-  elevation: level;
-  empty-cells: show;
-  fit: fill;
-  fit-position: 0 0;
-  float: none;
-  float-offset: 0 0;
-  grid-columns: none;
-  grid-rows: none;
-  hanging-punctuation: none;
-  height: auto;
-  hyphenate-after: auto;
-  hyphenate-before: auto;
-  hyphenate-character: auto;
-  hyphenate-lines: no-limit;
-  hyphenate-resource: none;
-  -webkit-hyphens: manual;
-  -ms-hyphens: manual;
-  hyphens: manual;
-  icon: auto;
-  image-orientation: auto;
-  image-rendering: auto;
-  image-resolution: normal;
-  inline-box-align: last;
-  left: auto;
-  line-height: inherit;
-  line-stacking: inline-line-height exclude-ruby consider-shifts;
-  list-style: disc outside none;
-  margin: 0;
-  marks: none;
-  marquee-direction: forward;
-  marquee-loop: 1;
-  marquee-play-count: 1;
-  marquee-speed: normal;
-  marquee-style: scroll;
-  max-height: none;
-  max-width: none;
-  min-height: 0;
-  min-width: 0;
-  move-to: normal;
-  nav-down: auto;
-  nav-index: auto;
-  nav-left: auto;
-  nav-right: auto;
-  nav-up: auto;
-  opacity: 1;
-  orphans: 2;
-  outline: medium none invert;
-  outline-offset: 0;
-  overflow: visible;
-  overflow-style: auto;
-  padding: 0;
-  page: auto;
-  page-break-after: auto;
-  page-break-before: auto;
-  page-break-inside: auto;
-  page-policy: start;
-  -webkit-perspective: none;
-  perspective: none;
-  -webkit-perspective-origin: 50% 50%;
-  perspective-origin: 50% 50%;
-  pointer-events: auto;
-  position: static;
-  presentation-level: 0;
-  punctuation-trim: none;
-  quotes: none;
-  rendering-intent: auto;
-  resize: none;
-  right: auto;
-  rotation: 0;
-  rotation-point: 50% 50%;
-  ruby-align: auto;
-  ruby-overhang: none;
-  ruby-position: before;
-  ruby-span: none;
-  size: auto;
-  string-set: none;
-  table-layout: auto;
-  top: auto;
-  -webkit-transform: none;
-  transform: none;
-  -webkit-transform-origin: 50% 50% 0;
-  transform-origin: 50% 50% 0;
-  -webkit-transform-style: flat;
-  transform-style: flat;
-  -webkit-transition: all 0 ease 0;
-  transition: all 0 ease 0;
-  unicode-bidi: normal;
-  vertical-align: baseline;
-  white-space: normal;
-  white-space-collapse: collapse;
-  widows: 2;
-  width: auto;
-  word-break: normal;
-  word-spacing: normal;
-  word-wrap: normal;
-  z-index: auto;
-  text-align: start;
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale
+#disco-container button,
+#disco-container svg {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  font-size-adjust: none !important;
+  font-size: 100% !important;
+  font-style: normal !important;
+  letter-spacing: normal !important;
+  font-stretch: normal !important;
+  font-variant: normal !important;
+  font-weight: 400 !important;
+  font: normal normal 100% -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  text-align: left !important;
+  text-align-last: auto !important;
+  text-decoration: none !important;
+  -webkit-text-emphasis: none !important;
+  text-emphasis: none !important;
+  text-height: auto !important;
+  text-indent: 0 !important;
+  text-justify: auto !important;
+  text-outline: none !important;
+  text-shadow: none !important;
+  text-transform: none !important;
+  text-wrap: normal !important;
+  alignment-adjust: auto !important;
+  alignment-baseline: baseline !important;
+  -webkit-animation: none 0 ease 0 1 normal !important;
+  animation: none 0 ease 0 1 normal !important;
+  -webkit-animation-play-state: running !important;
+  animation-play-state: running !important;
+  -webkit-appearance: normal !important;
+  -moz-appearance: normal !important;
+  appearance: normal !important;
+  azimuth: center !important;
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  background: none 0 0 auto repeat scroll padding-box transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  baseline-shift: baseline !important;
+  binding: none !important;
+  bleed: 6pt !important;
+  bookmark-label: content() !important;
+  bookmark-level: none !important;
+  bookmark-state: open !important;
+  bookmark-target: none !important;
+  border: 0 none transparent !important;
+  border-radius: 0 !important;
+  bottom: auto !important;
+  box-align: stretch !important;
+  -webkit-box-decoration-break: slice !important;
+  box-decoration-break: slice !important;
+  box-direction: normal !important;
+  box-flex: 0.0 !important;
+  box-flex-group: 1 !important;
+  box-lines: single !important;
+  box-ordinal-group: 1 !important;
+  box-orient: inline-axis !important;
+  box-pack: start !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  -webkit-box-sizing: content-box !important;
+  box-sizing: content-box !important;
+  -webkit-column-break-after: auto !important;
+  break-after: auto !important;
+  -webkit-column-break-before: auto !important;
+  break-before: auto !important;
+  -webkit-column-break-inside: auto !important;
+  break-inside: auto !important;
+  caption-side: top !important;
+  clear: none !important;
+  clip: auto !important;
+  color: inherit !important;
+  color-profile: auto !important;
+  -webkit-column-count: auto !important;
+  column-count: auto !important;
+  -webkit-column-fill: balance !important;
+  column-fill: balance !important;
+  -webkit-column-gap: normal !important;
+  column-gap: normal !important;
+  -webkit-column-rule: medium medium #1f1f1f !important;
+  column-rule: medium medium #1f1f1f !important;
+  -webkit-column-span: 1 !important;
+  column-span: 1 !important;
+  -webkit-column-width: auto !important;
+  column-width: auto !important;
+  -webkit-columns: auto auto !important;
+  columns: auto auto !important;
+  content: normal !important;
+  counter-increment: none !important;
+  counter-reset: none !important;
+  crop: auto !important;
+  cursor: auto !important;
+  direction: ltr !important;
+  display: inline !important;
+  dominant-baseline: auto !important;
+  drop-initial-after-adjust: text-after-edge !important;
+  drop-initial-after-align: baseline !important;
+  drop-initial-before-adjust: text-before-edge !important;
+  drop-initial-before-align: caps-height !important;
+  drop-initial-size: auto !important;
+  drop-initial-value: initial !important;
+  elevation: level !important;
+  empty-cells: show !important;
+  fit: fill !important;
+  fit-position: 0 0 !important;
+  float: none !important;
+  float-offset: 0 0 !important;
+  grid-columns: none !important;
+  grid-rows: none !important;
+  hanging-punctuation: none !important;
+  height: auto !important;
+  hyphenate-after: auto !important;
+  hyphenate-before: auto !important;
+  hyphenate-character: auto !important;
+  hyphenate-lines: no-limit !important;
+  hyphenate-resource: none !important;
+  -webkit-hyphens: manual !important;
+  -ms-hyphens: manual !important;
+  hyphens: manual !important;
+  icon: auto !important;
+  image-orientation: auto !important;
+  image-rendering: auto !important;
+  image-resolution: normal !important;
+  inline-box-align: last !important;
+  left: auto !important;
+  line-height: inherit !important;
+  line-stacking: inline-line-height exclude-ruby consider-shifts !important;
+  list-style: disc outside none !important;
+  margin: 0 !important;
+  marks: none !important;
+  marquee-direction: forward !important;
+  marquee-loop: 1 !important;
+  marquee-play-count: 1 !important;
+  marquee-speed: normal !important;
+  marquee-style: scroll !important;
+  max-height: none !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  min-width: 0 !important;
+  move-to: normal !important;
+  nav-down: auto !important;
+  nav-index: auto !important;
+  nav-left: auto !important;
+  nav-right: auto !important;
+  nav-up: auto !important;
+  opacity: 1 !important;
+  orphans: 2 !important;
+  outline: medium none invert !important;
+  outline-offset: 0 !important;
+  overflow: visible !important;
+  overflow-style: auto !important;
+  padding: 0 !important;
+  page: auto !important;
+  page-break-after: auto !important;
+  page-break-before: auto !important;
+  page-break-inside: auto !important;
+  page-policy: start !important;
+  -webkit-perspective: none !important;
+  perspective: none !important;
+  -webkit-perspective-origin: 50% 50% !important;
+  perspective-origin: 50% 50% !important;
+  pointer-events: auto !important;
+  position: static !important;
+  presentation-level: 0 !important;
+  punctuation-trim: none !important;
+  quotes: none !important;
+  rendering-intent: auto !important;
+  resize: none !important;
+  right: auto !important;
+  rotation: 0 !important;
+  rotation-point: 50% 50% !important;
+  ruby-align: auto !important;
+  ruby-overhang: none !important;
+  ruby-position: before !important;
+  ruby-span: none !important;
+  size: auto !important;
+  string-set: none !important;
+  table-layout: auto !important;
+  top: auto !important;
+  -webkit-transform: none !important;
+  transform: none !important;
+  -webkit-transform-origin: 50% 50% 0 !important;
+  transform-origin: 50% 50% 0 !important;
+  -webkit-transform-style: flat !important;
+  transform-style: flat !important;
+  -webkit-transition: all 0 ease 0 !important;
+  transition: all 0 ease 0 !important;
+  unicode-bidi: normal !important;
+  vertical-align: baseline !important;
+  white-space: normal !important;
+  white-space-collapse: collapse !important;
+  widows: 2 !important;
+  width: auto !important;
+  word-break: normal !important;
+  word-spacing: normal !important;
+  word-wrap: normal !important;
+  z-index: auto !important;
+  text-align: start !important;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)" !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+#disco-container svg {
+  vertical-align: middle !important;
+}
+
+#disco-container div {
+  display: block !important;
+  box-sizing: border-box !important;
+}
+
+#disco-container .disco-wrapper {
+  position: static !important;
+  bottom: 0px !important;
+  right: 0px !important;
+  top: 0px !important;
+  left: 0px !important; 
+  height: 0px;
+  width: 0px;
+  z-index: 2147483647 !important;
+}
+
+#disco-container .disco-reader {
+  position: fixed !important;
+  bottom: 18px !important;
+  font-weight: bold !important;
+  right: 72px !important;
+  outline: 0px !important;
+  z-index: 2147483647 !important;
+  font-size: 14px !important;
+  background: rgb(255, 255, 255) !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 15px !important;
+  border-radius: 4px !important;
+  text-align: center !important;
+  padding: 12px !important;
+  cursor: pointer !important;
+  display: block !important;
+}
+
+#disco-container .disco-reader.disco-reader--open {
+  display: none !important;
+}
+
+#disco-container .disco-button {
+  position: fixed !important;
+  cursor: pointer;
+  display: block !important;
+  bottom: 12px !important;
+  right: 12px !important;
+  text-align: center !important;
+  outline: none !important;
+  background-color: rgb(123, 22, 255) !important;
+  background-image: radial-gradient(at left top, rgb(123, 22, 255) 0%, rgb(68, 0, 204) 100%) !important;
+  border-radius: 28px !important;
+  height: 56px !important;
+  width: 56px !important;
+  border: none !important;
+  cursor: pointer !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 15px !important;
+  z-index: 2147483647 !important;
+}
+
+#disco-container .disco-button.disco-button--mobile {
+  display: none !important;
 }
 `;
 const head = document.head || document.getElementsByTagName('head')[0];
@@ -311,15 +298,14 @@ class DiscoLauncher extends Component {
     }
     this.mediaQueryList = window.matchMedia('(min-width: 500px)');
     this.mediaQueryList.addListener(this.updateMatches);
-    this.updateMatches();
   }
 
   componentDidMount() {
+    this.updateMatches();
     window.addEventListener(
       'message',
       e => {
         if (e.origin === this.props.src) {
-          console.log('preact', e);
           if (e.data.code) {
             if (e.data.code === 1) {
               this.setState({ isConnected: true });
@@ -371,7 +357,7 @@ class DiscoLauncher extends Component {
   getFrameStyle = () => {
     const mobile = {
       display: 'block',
-      transition: 'all .2s ease',
+      transition: 'all .2s ease-out',
       position: 'fixed',
       transform: this.state.isOpen
         ? 'translate3d(0,0,0)'
@@ -380,7 +366,6 @@ class DiscoLauncher extends Component {
       top: 0,
       left: 0,
       bottom: 0,
-      willChange: 'transform, borderRadisu, right, bottom',
       borderRadius: 0,
       zIndex: 1200,
       background: '#fff',
@@ -407,70 +392,29 @@ class DiscoLauncher extends Component {
 
   render({ src }, { isOpen, isDesktop, isConnected }) {
     return (
-      <div id="disco-container" style={{ display: 'block' }}>
+      <div id="disco-container">
         <div
+          className="disco-wrapper"
           style={{
-            position: 'static',
-            bottom: 0,
-            right: 0,
-            top: 0,
-            left: 0,
             height: isDesktop ? (isOpen ? 500 : 0) : isOpen ? '100%' : 0,
             width: isDesktop ? (isOpen ? 370 : 0) : isOpen ? '100%' : 0,
-            height: 570,
-            width: 370,
-            zIndex: 2147483647,
           }}
         >
           <button
             type="button"
-            style={{
-              position: 'fixed',
-              bottom: 18,
-              fontWeight: 'bold',
-              right: 72,
-              outline: '0',
-              display: isDesktop
-                ? isOpen
-                  ? 'none'
-                  : 'block'
-                : isOpen
-                  ? 'none'
-                  : 'block',
-              zIndex: 2147483647,
-              fontSize: 14,
-              background: '#fff',
-              boxShadow: '0 8px 15px rgba(0,0,0,.2)',
-              borderRadius: 4,
-              textAlign: 'center',
-              padding: 12,
-            }}
+            className={
+              isOpen ? 'disco-reader disco-reader--open' : 'disco-reader'
+            }
             onClick={this.handleClick}
           >
             Chat with other readers...
           </button>
           <button
             type="button"
+            className={`disco-button ${
+              !isDesktop && isOpen ? 'disco-button--mobile' : ''
+            }`}
             onClick={this.handleClick}
-            style={{
-              position: 'fixed',
-              display: isDesktop ? 'block' : isOpen ? 'none' : 'block',
-              bottom: 12,
-              right: 12,
-              textAlign: 'center',
-              outline: '0',
-              backgroundColor: '#7B16FF',
-              backgroundImage:
-                'radial-gradient(ellipse farthest-corner at top left,#7B16FF 0%,#4400CC 100%)',
-              borderRadius: '28px',
-              height: 56,
-              width: 56,
-              outline: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              boxShadow: '0 8px 15px rgba(0,0,0,.2)',
-              zIndex: 2147483647,
-            }}
           >
             {isOpen ? (
               <svg
@@ -495,9 +439,6 @@ class DiscoLauncher extends Component {
                 x="0px"
                 y="0px"
                 viewBox="0 0 32 32"
-                style={{
-                  verticalAlign: 'middle',
-                }}
                 width="24"
                 height="24"
               >

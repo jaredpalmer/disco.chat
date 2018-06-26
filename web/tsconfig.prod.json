@@ -28,6 +28,10 @@
     "scripts",
     "acceptance-tests",
     "webpack",
-    "jest"
-  ]
+    "jest",
+    "src/setupTests.ts",
+    "cypress",
+    "src/**/*.test.tsx"
+  ],
+  "types": ["typePatches"]
 }
