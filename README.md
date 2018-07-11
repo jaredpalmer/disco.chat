@@ -34,8 +34,8 @@ Although I did actually deploy this on [one article on my dad's blog](https://ww
 
 This was my first time writing 3rd-party JS, working with iframes, and websockets. There are some bits of code that I am particularly proud of which you may find useful:
 
-- [`web/sdk/disco.js#L26-L61`](https://github.com/jaredpalmer/disco.chat/blob/master/web/sdk/disco.js#L26-L61) Coordinated state changes across the app and the widget (separate react and preact apps)
-- [`web/src/App.tsx#L317-L331`](https://github.com/jaredpalmer/disco.chat/blob/master/web/src/App.tsx#L317-L331) Twitter Lite's empty div + flexbox technique for chat layout
+- [`web/sdk/disco.js`](https://github.com/jaredpalmer/disco.chat/blob/784957691db77d0bbb354de6b5507dbf87377472/web/sdk/disco.js#L305-L342) Coordinated state changes across the app and the widget (separate react and preact apps)
+- [`web/src/App.tsx`](https://github.com/jaredpalmer/disco.chat/blob/784957691db77d0bbb354de6b5507dbf87377472/web/src/App.tsx#L317-L331) Twitter Lite's empty div + flexbox technique for chat layout
 
 ### Vision / Roadmap
 
